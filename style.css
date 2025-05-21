@@ -605,7 +605,12 @@ small {
         right: 4em;
     }
 
+    #hero-area h1{
+        top: 50px;
+        right: 50px;
+    }
     #hero-area h1 img {
+        
         width: 28vw;
         max-width: 500px;
         height: fit-content;
