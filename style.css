@@ -535,6 +535,7 @@ small {
         width: 100%;
         height: auto;
     }
+
     #hero-area {
         width: 100%;
         height: 100vh;
@@ -542,11 +543,13 @@ small {
     }
 
     #hero-area h1 {
-        width: fit-content;
+        position: absolute;
         top: 20px;
         right: 20px;
-        /*
-        margin:20px 20px auto auto*/
+        width: 60%;
+        /* または width: auto; 必要に応じて調整 */
+        max-width: 80vw;
+        height: auto;
     }
 
     #wrapper {
