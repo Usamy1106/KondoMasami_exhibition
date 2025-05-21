@@ -538,13 +538,14 @@ small {
 
 
     #hero-area h1 {
-        position: absolute;
-        top: 5vh;
-        right: 8vw;
+        position: static;
+        width: fit-content;
+        margin:20px 20px auto auto
     }
 
     #hero-area h1 img {
         height: 82vh;
+        width: fit-content;
     }
 
     #wrapper {
@@ -609,8 +610,6 @@ small {
     }
 
     #hero-area h1{
-        bottom: 10px;
-        right: 50px;
         width: 28vw;
         max-width: 500px;
     }
