@@ -22,6 +22,7 @@ img,
 picture {
     display: block;
     width: 100%;
+    object-fit: contain;
 }
 
 :root {
@@ -437,7 +438,7 @@ footer {
 
 .sns-icon-container {
     display: flex;
-    gap: 2em;
+    gap: 20px;
 }
 
 .sns-icon-container a img {
@@ -543,7 +544,7 @@ small {
     }
 
     #hero-area h1 img {
-        height: 82vh;
+        height: 82%;
     }
 
     #wrapper {
@@ -608,7 +609,7 @@ small {
     }
 
     #hero-area h1 img {
-        height: 56vh;
+        height: 56%;
     }
 
     #wrapper {
