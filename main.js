@@ -3,6 +3,8 @@ const wrapperStyle = () => {
     const visual_img = visual.querySelector("img");
     const wrapper = document.getElementById("wrapper");
     const hero_area = document.getElementById("hero-area");
+    const h1 = document.querySelector("#hero-area h1");
+    const images = h1.querySelectorAll("img");
     const footer = document.getElementsByTagName("footer")[0];
     const html_element = document.documentElement;
 
@@ -22,7 +24,10 @@ const wrapperStyle = () => {
         wrapper.style.marginLeft = 0 + "px";
         footer.style.marginLeft = 0 + "px";
         hero_area.style.height = visual_height + "px";
-    }
+        images.forEach(img => {
+            img.style.height = visual_height - 40 + "px";
+        });
+}
 };
 window.addEventListener("load", wrapperStyle);
 window.addEventListener("resize", wrapperStyle);
