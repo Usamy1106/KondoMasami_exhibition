@@ -610,10 +610,8 @@ small {
         right: 50px;
     }
     #hero-area h1 img {
-        
         width: 28vw;
         max-width: 500px;
-        height: fit-content;
     }
 
     #wrapper {
