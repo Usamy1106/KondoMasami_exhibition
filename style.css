@@ -606,12 +606,14 @@ small {
     }
 
     #hero-area h1{
-        top: 50px;
+        top: 26px;
         right: 50px;
-    }
-    #hero-area h1 img {
         width: 28vw;
         max-width: 500px;
+    }
+    #hero-area h1 img {
+        width: 100%;
+        height: fit-content;
     }
 
     #wrapper {
