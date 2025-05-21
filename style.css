@@ -606,7 +606,7 @@ small {
     }
 
     #hero-area h1{
-        top: 26px;
+        top: 1em;
         right: 50px;
         width: 28vw;
         max-width: 500px;
