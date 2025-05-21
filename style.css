@@ -653,10 +653,12 @@ small {
     }
 
     .sns-icon-container {
-    width: 36vw;
+        width: 16em;
+        max-width: 160px;
     }
 
     .sns-icon-container a img {
         height: 2em;
+        max-height: 40px;
     }
 }
