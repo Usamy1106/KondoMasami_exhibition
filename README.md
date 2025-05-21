@@ -1,1 +1,0 @@
-# KondoMasami_exhibition

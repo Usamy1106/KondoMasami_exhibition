@@ -14,14 +14,19 @@ const wrapperStyle = () => {
     if (viewport_width > 1024) {
         wrapper.style.width = wrapper_width + "px";
         wrapper.style.marginLeft = visual_width + "px";
+        hero_area.style.height = 60 + "vh";
         footer.style.width = wrapper_width + "px";
         footer.style.marginLeft = visual_width + "px";
     } else {
+        wrapper.style.width = 100 + "%";
         wrapper.style.marginLeft = 0 + "px";
         footer.style.marginLeft = 0 + "px";
         hero_area.style.height = visual_height + "px";
     }
 };
+window.addEventListener("load", wrapperStyle);
+window.addEventListener("resize", wrapperStyle);
+window.addEventListener("orientationchange", wrapperStyle);
 
 document.addEventListener("DOMContentLoaded", () => {
     const spans = document.querySelectorAll("#splash p span");
@@ -42,9 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000); // フェードアウト時間と合わせる
     }, 3000); // 最初の表示時間
 });
-
-window.addEventListener("load", wrapperStyle);
-window.addEventListener("resize", wrapperStyle);
 
 //ハンバーガーメニュー
 document.querySelector('.g-nav-openbtn').addEventListener('click', function () {
