@@ -422,6 +422,7 @@ footer {
 .footer-logo {
     width: clamp(200px, 25vw, 500px);
     margin-right: 5em;
+    margin-bottom: 5em;
     height: fit-content;
 }
 
@@ -436,13 +437,14 @@ footer {
 }
 
 .sns-icon-container {
-    width: 8em;
+    width: 20em;
     display: flex;
     justify-content: space-between;
 }
 
 .sns-icon-container a img {
-    height: 4em;
+    height: 3em;
+    max-height: 60px;
 }
 
 .flex-container {
@@ -604,8 +606,9 @@ small {
     }
 
     #hero-area h1 img {
-        height: clamp(300px,56vh,450px);
-        width: auto;
+        width: 28vw;
+        max-width: 500px;
+        height: fit-content;
     }
 
     #wrapper {
@@ -639,7 +642,6 @@ small {
     }
 
 
-
     .footer-branding {
         flex-direction: column;
         margin-bottom: 2em;
@@ -648,6 +650,10 @@ small {
     .footer-logo {
         width: 100%;
         margin-bottom: 4em;
+    }
+
+    .sns-icon-container {
+    width: 36vw;
     }
 
     .sns-icon-container a img {
