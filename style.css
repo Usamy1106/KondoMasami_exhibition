@@ -107,7 +107,7 @@ section {
 #splash p span {
     opacity: 0;
     visibility: hidden;
-    font-size: var(--font-size-L)l;
+    font-size: var(--font-size-L);
     animation: splash 0.25s ease forwards;
 }
 
@@ -536,6 +536,7 @@ small {
         height: auto;
     }
 
+    /*
     #hero-area {
         width: 100%;
         height: 100vh;
@@ -547,50 +548,71 @@ small {
         top: 20px;
         right: 20px;
         width: 60%;
-        /* または width: auto; 必要に応じて調整 */
+        /* または width: auto; 必要に応じて調整 
         max-width: 80vw;
         height: auto;
     }
-
-    #wrapper {
+*/
+    #hero-area h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        text-align: center;
+        background: rgba(255, 0, 0, 0.1);
+        /* 背景つけて位置を見るため */
     }
 
-    section {
-        margin: 10vh 0;
+    #hero-area h1 img {
+        height: 50px;
+        /* 仮に高さ固定 */
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        background: rgba(0, 255, 0, 0.2);
+        /* 背景で画像領域確認 */
     }
+}
 
-    .info {
-        height: 40%;
-        width: 100%;
-        margin: 20px auto;
+#wrapper {
+    width: 100%;
+}
 
-    }
+section {
+    margin: 10vh 0;
+}
 
-    #about {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
+.info {
+    height: 40%;
+    width: 100%;
+    margin: 20px auto;
 
-    #profile>div:nth-of-type(2) {
-        margin: 5vh -33vw;
-    }
+}
 
-    .exhibition-group-container {
-        padding: 8em 25%;
-        transform: rotate(0.6deg);
-    }
+#about {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
 
-    .footer-branding {
-        flex-direction: row;
-        justify-content: space-between;
-        height: fit-content;
-        margin-bottom: 5em;
-    }
+#profile>div:nth-of-type(2) {
+    margin: 5vh -33vw;
+}
 
-    .footer-logo {
-        margin-bottom: 4em;
-    }
+.exhibition-group-container {
+    padding: 8em 25%;
+    transform: rotate(0.6deg);
+}
+
+.footer-branding {
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+    margin-bottom: 5em;
+}
+
+.footer-logo {
+    margin-bottom: 4em;
+}
 }
 
 /* スマホ（〜767px） */
