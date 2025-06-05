@@ -522,7 +522,7 @@ small {
     }
 }
 
-@media (min-aspect-ratio: 3/4) {
+@media (max-aspect-ratio: 3/4) {
     .pc-img {
         display: none;
     }
