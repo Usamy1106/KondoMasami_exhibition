@@ -521,7 +521,7 @@ small {
 }
 
 /* タブレット（1024px） */
-@media (min-width: 768px) and (max-width: 1324px) and (orientation: portrait) {
+@media (min-width: 768px) and (max-width: 1324px) {
     .pc-img {
         display: none;
     }
@@ -530,6 +530,9 @@ small {
         display: block;
     }
 
+    .sp-img {
+        display: none;
+    }
 
     #hero-area {
         width: 100%;
@@ -559,9 +562,9 @@ small {
         /* 背景で画像領域確認 */
     }
 
-
     #wrapper {
         width: 100%;
+        padding: 0;
     }
 
     section {
