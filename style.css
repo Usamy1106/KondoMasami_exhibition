@@ -486,8 +486,6 @@ small {
 }
 
 
-
-
 @media only screen and (max-width: 1366px) {
 
     #wrapper {
@@ -522,88 +520,8 @@ small {
     }
 }
 
-@media (max-aspect-ratio: 3/4) {
-    .pc-img {
-        display: none;
-    }
-
-    .tablet-img {
-        display: block;
-    }
-
-
-    #hero-area {
-        width: 100%;
-    }
-
-    #visual img {
-        position: absolute;
-        width: 100%;
-        height: auto;
-    }
-
-    #hero-area h1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        /* 背景つけて位置を見るため */
-    }
-
-    #hero-area h1 img {
-        height: 50px;
-        /* 仮に高さ固定 */
-        width: auto;
-        display: block;
-        margin: 0 auto;
-        /* 背景で画像領域確認 */
-    }
-
-
-    #wrapper {
-        width: 100%;
-    }
-
-    section {
-        margin: 10vh 0;
-    }
-
-    .info {
-        height: 40%;
-        width: 100%;
-        margin: 20px auto;
-
-    }
-
-    #about {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-
-    #profile>div:nth-of-type(2) {
-        margin: 5vh -33vw;
-    }
-
-    .exhibition-group-container {
-        padding: 8em 25%;
-        transform: rotate(0.6deg);
-    }
-
-    .footer-branding {
-        flex-direction: row;
-        justify-content: space-between;
-        height: fit-content;
-        margin-bottom: 5em;
-    }
-
-    .footer-logo {
-        margin-bottom: 4em;
-    }
-}
-
 /* タブレット（1024px） */
-@media only screen and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
     .pc-img {
         display: none;
     }
@@ -685,6 +603,10 @@ small {
 
 /* スマホ（〜767px） */
 @media only screen and (max-width: 767px) {
+    .pc-img {
+        display: none;
+    }
+
     .tablet-img {
         display: none;
     }
@@ -693,6 +615,7 @@ small {
         display: block;
     }
 
+    /*
     .g-nav-openbtn {
         top: 10px;
         right: 10px;
@@ -702,9 +625,41 @@ small {
         top: 10px;
         right: 4em;
     }
+*/
+    #hero-area {
+        width: 100%;
+    }
+
+    #visual img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+
+    #hero-area h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        /* 背景つけて位置を見るため */
+    }
+
+    #hero-area h1 img {
+        height: 50px;
+        /* 仮に高さ固定 */
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        /* 背景で画像領域確認 */
+    }
 
     #wrapper {
         padding: 0;
+    }
+
+    section {
+        margin: 10vh 0;
     }
 
     #about {
@@ -728,6 +683,11 @@ small {
         transform: rotate(-3deg);
     }
 
+    .exhibition-group-container {
+        padding: 8em 25%;
+        transform: rotate(0.6deg);
+    }
+
     #access {
         padding-left: 2em;
         padding-right: 2em;
@@ -736,6 +696,8 @@ small {
 
     .footer-branding {
         flex-direction: column;
+        justify-content: space-between;
+        height: fit-content;
         margin-bottom: 2em;
     }
 
