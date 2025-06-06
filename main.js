@@ -14,7 +14,7 @@ const wrapperStyle = () => {
 
     // iPad Pro対策: PCモードでもタッチデバイスならモバイル扱いに
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const isProbablyDesktop = viewport_width > 1280 && !isTouchDevice;
+    const isProbablyDesktop = viewport_width > 1280;
 
     // --- PC向け処理 ---
     if (isProbablyDesktop) {
