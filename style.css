@@ -521,7 +521,7 @@ small {
 }
 
 /* タブレット（1032px） */
-@media only screen and (max-width: 1032px) {
+@media only screen and (max-width: 1024px) {
     .pc-img {
         display: none;
     }
