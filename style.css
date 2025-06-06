@@ -521,7 +521,7 @@ small {
 }
 
 /* タブレット（1024px） */
-@media only screen and (max-width: 1280px) and (hover: none) and (pointer: coarse)  {
+@media only screen and (max-width: 1280px)  {
     .pc-img {
         display: none;
     }
