@@ -264,7 +264,6 @@ a.disable {
 
 #hero-area {
     position: relative;
-    z-index: 99;
     width: 85%;
     height: 60vh;
     margin: 0 auto;
@@ -273,6 +272,7 @@ a.disable {
 #hero-area h1 {
     position: absolute;
     top: 10vh;
+    z-index: 30;
 }
 
 #wrapper {
@@ -540,6 +540,8 @@ small {
 
     #visual img {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: auto;
     }
@@ -591,7 +593,11 @@ small {
         padding: 8em 25%;
         transform: rotate(0.6deg);
     }
-
+    #access,#event,#movie {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    
     .footer-branding {
         flex-direction: row;
         justify-content: space-between;
