@@ -1,0 +1,455 @@
+#visual img {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+}
+
+.slideshow {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 99;
+}
+
+#hero-area {
+    position: relative;
+    width: 85%;
+    height: 60vh;
+    margin: 0 auto;
+}
+
+#hero-area h1 {
+    position: absolute;
+    top: 10vh;
+    z-index: 30;
+}
+
+.info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#wrapper {
+    overflow: hidden;
+}
+
+section {
+    margin: 20vh 0;
+}
+
+#about {
+    position: relative;
+    width: 80%;
+    margin: 20vh auto;
+    padding-bottom: 10vh;
+}
+
+#event,
+#movie,
+#access {
+    width: 80%;
+    margin: 20vh auto;
+}
+
+
+.about-text {
+    transform: rotate(-3deg);
+}
+
+.about-name {
+    position: absolute;
+    width: 8em;
+    bottom: 2em;
+    right: 0;
+}
+
+.heading-profile {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#profile>div {
+    margin: 5vh -20vw;
+}
+
+.profile-container {
+    padding: 8em 65%;
+    background-color: var(--color-black);
+    transform: rotate(5deg);
+}
+
+.profile-container p {
+    margin: 1em 0;
+}
+
+.exhibition-individual-container {
+    padding: 8em 60%;
+    background-color: var(--color-black);
+    transform: rotate(-6deg);
+}
+
+.exhibition-individual-container p {
+    margin: 1em 0;
+}
+
+.exhibition-group-container {
+    padding: 8em 36%;
+    background-color: var(--color-black);
+    transform: rotate(2deg);
+}
+
+.exhibition-group-container>div {
+    display: flex;
+    gap: 2em;
+    margin: 2em 0;
+}
+
+.year {
+    white-space: nowrap;
+}
+
+#gallery {
+    width: 100%;
+}
+
+.heading-gallery {
+    width: fit-content;
+    margin: 0 auto 2em;
+}
+
+.gallery-wrap {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.gallery-slider__wrap.left {
+    display: flex;
+    animation: scroll-left var(--scroll-speed, 60s) linear infinite;
+    width: fit-content;
+}
+
+.gallery-slider__wrap.right {
+    display: flex;
+    animation: scroll-right var(--scroll-speed, 60s) linear infinite;
+    width: fit-content;
+}
+
+.gallery-slider {
+    display: flex;
+}
+
+.gallery-slider li img {
+    height: clamp(120px, 18vh, 240px);
+    width: auto;
+    margin-right: 40px;
+    margin-bottom: 5vh;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-1 * var(--scroll-width)));
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(calc(-1 * var(--scroll-width)));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.gallery-button {
+    display: block;
+    padding: 0.5em 4em;
+    width: fit-content;
+    margin: 0 auto 5vh;
+    border: 2px solid var(--color-black);
+    border-radius: 0.1em;
+    transition: all .4s
+}
+
+.gallery-button span {
+    letter-spacing: .5em;
+}
+
+.gallery-button:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    -webkit-text-stroke: 0.08em var(--color-white);
+    text-stroke: 0.08em var(--color-white);
+}
+
+.iframeWrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.iframeWrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#access h2,
+#access p {
+    margin: 1em 0;
+}
+
+.map-container {
+    display: flex;
+    gap: 2em;
+}
+
+.map-container img {
+    height: 20vh;
+}
+
+.infinite-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.track picture {
+    width: 140vw;
+    flex-shrink: 0;
+    margin-right: 8vw;
+    /* 間隔を追加 */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    #wrapper {
+        padding: 0 4vw;
+    }
+
+    .exhibition-group-container {
+        padding: 8em 58%;
+    }
+
+    .exhibition-group-container div {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .exhibition-group-container div p:nth-child(1) {
+        white-space: normal;
+    }
+
+    .map-container {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .map-container img {
+        height: 10em;
+    }
+}
+
+/* タブレット（1280px） */
+@media only screen and (max-width: 1280px) {
+    .pc-img {
+        display: none;
+    }
+
+    .tablet-img {
+        display: block;
+    }
+
+    .sp-img {
+        display: none;
+    }
+
+    #hero-area {
+        width: 100%;
+    }
+
+    #visual img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    #hero-area h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        /* 背景つけて位置を見るため */
+    }
+
+    #hero-area h1 img {
+        height: 50px;
+        /* 仮に高さ固定 */
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        /* 背景で画像領域確認 */
+    }
+
+    #wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    section {
+        width: 82%;
+        margin: 10vh auto;
+    }
+
+    #about,
+    #event,
+    #movie,
+    #access {
+        margin: 10vh auto;
+    }
+
+    .info {
+        height: 40%;
+        width: 90%;
+        margin: 20px auto;
+
+    }
+
+
+    #profile>div:nth-of-type(2) {
+        margin: 5vh -33vw;
+    }
+
+    .exhibition-group-container {
+        padding: 8em 25%;
+        transform: rotate(0.6deg);
+    }
+}
+
+/* スマホ（〜767px） */
+@media only screen and (max-width: 767px) {
+    .pc-img {
+        display: none;
+    }
+
+    .tablet-img {
+        display: none;
+    }
+
+    .sp-img {
+        display: block;
+    }
+
+    #hero-area {
+        width: 100%;
+    }
+
+    #visual img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
+
+    #hero-area h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        /* 背景つけて位置を見るため */
+    }
+
+    #hero-area h1 img {
+        height: 50px;
+        /* 仮に高さ固定 */
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        /* 背景で画像領域確認 */
+    }
+
+    #wrapper {
+        padding: 0;
+    }
+
+    section {
+        margin: 10vh auto;
+    }
+
+    #about,
+    #event,
+    #movie,
+    #access {
+        width: 100%;
+    }
+
+    #about {
+        padding-right: 4em;
+        padding-left: 4em;
+    }
+
+    #profile>div:nth-of-type(1) {
+        margin: 5vh -55vw;
+    }
+
+    .profile-container {
+        transform: rotate(4deg);
+    }
+
+    #profile>div:nth-of-type(2) {
+        margin: 5vh -52vw;
+    }
+
+    .exhibition-individual-container {
+        transform: rotate(-3deg);
+    }
+
+    .exhibition-group-container {
+        padding: 8em 25%;
+        transform: rotate(0.6deg);
+    }
+
+    #access {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
