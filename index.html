@@ -18,7 +18,8 @@
     <meta name="twitter:description" content="近藤昌美退職記念展『抱擁と錯綜と犬』の公式サイト。展示日程や詳細情報を掲載しています。">
     <meta name="twitter:image" content="https://zoomedia.sakura.ne.jp/project/2025kondomasami/ogp-image.jpg">
     <title>近藤昌美退職記念展｜抱擁と錯綜と犬</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/top.css">
     <script>
         (function (d) {
             var config = {
@@ -77,8 +78,8 @@
                     <ul id="g-navi text-black">
                         <li><a href="#about">About</a></li>
                         <li><a href="#profile">Profile</a></li>
-                        <li><a href="#gallery" class="disable">Gallery</a></li>
                         <li><a href="#movie">Movie</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#access">Access</a></li>
                     </ul>
                 </div>
@@ -113,15 +114,32 @@
                             data-lang-en-alt="Masami Kondo Retirement Commemorative Exhibition Hugs, Confusion and Dogs">
                     </picture>
                 </h1>
-                <div id="visual">
-                    <picture>
-                        <source srcset="images/pictures/waterfall_flowers_and_a_dog_kegon.avif" type="image/avif">
-                        <source srcset="images/pictures/waterfall_flowers_and_a_dog_kegon.webp" type="image/webp">
-                        <img src="images/pictures/waterfall_flowers_and_a_dog_kegon.jpg"
-                            alt="《Waterfall, flowers and a dog (Kegon) / 滝と花と犬（華厳）》 アクリル、キャンバス　2023年 (撮影：野口浩史)"
-                            data-lang-jp-alt="《Waterfall, flowers and a dog (Kegon) / 滝と花と犬（華厳）》 アクリル、キャンバス　2023年 (撮影：野口浩史)"
-                            data-lang-en-alt="Waterfall, Flowers and a Dog (Kegon) Acrylic on canvas, 2023 Photo: Hiroshi Noguchi">
-                    </picture>
+                <div id="visual" class="slideshow">
+                    <div class="slide active">
+                        <picture>
+                            <source srcset="images/pictures/waterfall_flowers_and_a_dog_kegon.avif" type="image/avif">
+                            <source srcset="images/pictures/waterfall_flowers_and_a_dog_kegon.webp" type="image/webp">
+                            <img src="images/pictures/waterfall_flowers_and_a_dog_kegon.jpg"
+                                alt="《Waterfall, flowers and a dog (Kegon) / 滝と花と犬（華厳）》 アクリル、キャンバス　2023年 (撮影：野口浩史)"
+                                data-lang-jp-alt="《Waterfall, flowers and a dog (Kegon) / 滝と花と犬（華厳）》 アクリル、キャンバス　2023年 (撮影：野口浩史)"
+                                data-lang-en-alt="Waterfall, Flowers and a Dog (Kegon) Acrylic on canvas, 2023 Photo: Hiroshi Noguchi">
+                        </picture>
+                    </div>
+                    <div class="slide">
+                        <picture>
+                            <source srcset="images/pictures/_DSC7534.webp" type="image/webp">
+                            <source srcset="images/pictures/_DSC7534.avif" type="image/avif">
+                            <img src="images/pictures/_DSC7534.jpg" alt="_DSC7534">
+                        </picture>
+                    </div>
+                    <div class="slide">
+                        <picture>
+                            <source srcset="images/pictures/australian-waterfall-and-a-dog.webp" type="image/webp">
+                            <source srcset="images/pictures/australian-waterfall-and-a-dog.avif" type="image/avif">
+                            <img src="images/pictures/australian-waterfall-and-a-dog.jpg"
+                                alt="＜Australian waterfall and a dog  オーストラリアの滝と犬＞">
+                        </picture>
+                    </div>
                 </div>
             </div>
             <div id="wrapper">
@@ -324,24 +342,19 @@
                         </div>
                     </div>
                 </section>
-                <section id="event">
-                    <p class="about-text text-black" data-lang-jp="［関連イベント］
-　近藤昌美退職記念展　トークイベント 退職記念展の出品作品について作家本人が解説いたします。登壇者：近藤昌美,聞き手：宮﨑勇次郎（本学教授）
-　　日時：6/21（土）15:00〜16：00
-　　会場：東京造形大学附属美術館
-　　事前申込不要・参加費無料
-　　参加ご希望の方は上記の日時に会場にお集まりください。">
-                        ［関連イベント］<br>
-                        　近藤昌美退職記念展　トークイベント<br>
-                        　　退職記念展の出品作品について作家本人が解説いたします。<br>
-                        <br>
-                        　　登壇者：近藤昌美<br>
-                        　　聞き手：宮﨑勇次郎（本学教授）<br>
-                        　　日時：6/21（土）15:00〜16：00<br>
-                        　　会場：東京造形大学附属美術館<br>
-                        　　事前申込不要・参加費無料<br>
-                        　　参加ご希望の方は上記の日時に会場にお集まりください。<br>
+
+                <section id="event" class="about-text">
+                    <p class="text-black" data-lang-jp="［関連イベント］">［関連イベント］</p>
+                    <p class="text-black" data-lang-jp="　近藤昌美退職記念展　トークイベント">　近藤昌美退職記念展　トークイベント</p>
+                    <p class="br text-black" data-lang-jp="　　退職記念展の出品作品について作家本人が解説いたします。">　　退職記念展の出品作品について作家本人が解説いたします。
                     </p>
+
+                    <p class="text-black" data-lang-jp="　　登壇者：近藤昌美">　　登壇者：近藤昌美</p>
+                    <p class="text-black" data-lang-jp="　　聞き手：宮﨑勇次郎（本学教授）">　　聞き手：宮﨑勇次郎（本学教授）</p>
+                    <p class="text-black" data-lang-jp="　　日時：6/21（土）15:00〜16：00">　　日時：6/21（土）15:00〜16：00</p>
+                    <p class="text-black" data-lang-jp="　　会場：東京造形大学附属美術館">　　会場：東京造形大学附属美術館</p>
+                    <p class="text-black" data-lang-jp="　　事前申込不要・参加費無料">　　事前申込不要・参加費無料</p>
+                    <p class="text-black" data-lang-jp="　　参加ご希望の方は上記の日時に会場にお集まりください。">　　参加ご希望の方は上記の日時に会場にお集まりください。</p>
                 </section>
                 <section id="movie">
                     <div class="container">
@@ -352,51 +365,99 @@
                                     <source srcset="images/heading-movie.webp" type="image/webp">
                                     <img src="images/heading-movie" alt="Movie">
                                 </picture>
-                                <p class="text-black" data-lang-jp="近藤昌美退職記念展「抱擁と錯綜と犬」告知映像">近藤昌美退職記念展「抱擁と錯綜と犬」告知映像</p>
-                                <div class="iframeWrap">
-                                    <iframe width="560" height="315"
-                                        src="https://www.youtube.com/embed/eUjK3e53NKc?si=5WXKQuhH0IygS03z"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                                </div>
+                            </h2>
+                            <p class="text-black" data-lang-jp="近藤昌美退職記念展「抱擁と錯綜と犬」告知映像">近藤昌美退職記念展「抱擁と錯綜と犬」告知映像</p>
+                            <div class="iframeWrap">
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/eUjK3e53NKc?si=5WXKQuhH0IygS03z"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                            </div>
 
                         </div>
                     </div>
                 </section>
-                <!--
+
                 <section id="gallery">
+                    <h2 class="heading-gallery">
+                        <picture>
+                            <source srcset="images/heading-gallery.avif" type="image/avif">
+                            <source srcset="images/heading-gallery.webp" type="image/webp">
+                            <img src="images/heading-gallery.png" alt="Gallery">
+                        </picture>
+                    </h2>
                     <div class="gallery-wrap">
-                        <div class="gallery-slider__wrap">
+                        <div class="gallery-slider__wrap left">
                             <ul class="gallery-slider">
                                 <li>
-                                    <source type="image/avif" srcset="images/activity-img01.avif">
-                                    <source type="image/webp" srcset="images/activity-img01.webp">
-                                    <img src="images/activity-img01.jpg" alt="リース作りのワークショップ">
-                                </li>
-
-                                <li>
-                                    <source type="image/avif" srcset="images/activity-img08.avif">
-                                    <source type="image/webp" srcset="images/activity-img08.webp">
-                                    <img src="images/activity-img08.jpg" alt="カヌー">
-                                </li>
-                            </ul>
-
-                            <ul class="slider clone">
-                                <li>
-                                    <source type="image/avif" srcset="images/activity-img01.avif">
-                                    <source type="image/webp" srcset="images/activity-img01.webp">
-                                    <img src="images/activity-img01.jpg" alt="リース作りのワークショップ">
+                                    <img src="images/pictures/adog-2.png" alt="＜A dog-2／犬-2＞">
                                 </li>
                                 <li>
-                                    <source type="image/avif" srcset="images/activity-img08.avif">
-                                    <source type="image/webp" srcset="images/activity-img08.webp">
-                                    <img src="images/activity-img08.jpg" alt="カヌー">
+                                    <img src="images/pictures/vase-without-flowers.png"
+                                        alt="＜Vase without flowers／花のない花瓶＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/flower-vase-and-skull.png"
+                                        alt="＜Flower vase and skull／花びんと頭骨＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/four-vases-and-three-flowers.png"
+                                        alt="＜Four vases and three flowers／４つの花瓶と３つの花＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/something-falling-and-a-dog.png"
+                                        alt="＜Something falling and a dog／落ちる何かと犬＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/melting-flowers.png" alt="＜Melting flowers／溶ける花＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/skull.png" alt="＜Skull／頭骨＞">
+                                </li>
+                                <li>
+                                    <img src="images/pictures/waterfall,Flower-and-X.png"
+                                        alt="＜Waterfall,Flower andX／滝と花とX＞">
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </section>-->
+                        <div class="gallery-wrap">
+                            <div class="gallery-slider__wrap right">
+                                <ul class="gallery-slider">
+                                    <li>
+                                        <img src="images/pictures/two-waterfalls-and-skulls.png"
+                                            alt="＜Two waterfalls and skulls／２つの滝と頭骨＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/australian-waterfall-and-a-dog.png"
+                                            alt="＜Australian waterfall and a dog  オーストラリアの滝と犬＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/two-flowers-and-flower-vase.png"
+                                            alt="＜Two flowers and flower vase／２つの花と花びん＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/two-waterfalls-and-skulls.png"
+                                            alt="＜Two waterfalls and skulls／２つの滝と頭骨＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/flower-and-vase.png" alt="＜Flower and vase／花と花びん＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/waterfall-2.png" alt="＜Waterfall／滝＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/waterfall,flowers-and-a-dog(Kegon).png"
+                                            alt="＜Waterfall, flowers and a dog (Kegon)  滝と花と犬（華厳）＞">
+                                    </li>
+                                    <li>
+                                        <img src="images/pictures/flower.png" alt="＜Flower／花＞">
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="gallery.html" class="gallery-button"><span>もっと見る</span></a>
+                        </div>
+                </section>
                 <section id="access">
                     <h2 class="heading-access">
                         <picture>
@@ -438,62 +499,13 @@
                         </picture>
                     </div>
                 </section>
-                <div class="wrap">
-                    <div class="slider_wrap">
-                        <div class="slider">
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                        </div>
-                        <div class="slider clone">
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                            <picture>
-                                <source srcset="images/tittle-decorative.avif" type="image/avif">
-                                <source srcset="images/tittle-decorative.webp" type="image/webp">
-                                <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
-                            </picture>
-                        </div>
+                <div class="infinite-slider">
+                    <div class="track" id="slider-track">
+                        <picture>
+                            <source srcset="images/tittle-decorative.avif" type="image/avif">
+                            <source srcset="images/tittle-decorative.webp" type="image/webp">
+                            <img src="images/tittle-decorative.png" alt="Hugs, confusion and dogs">
+                        </picture>
                     </div>
                 </div>
         </main>
@@ -531,8 +543,7 @@
                         data-lang-en="Website Production: Kazuhiro Usami, 3rd-year student, Department of Media Design, Tokyo Zokei University">
                         web制作：東京造形大学
                         メディアデザイン専攻領域3年　宇佐美和秀</p>
-                    <p data-lang-jp="デザイン原案：清水翔太郎"
-                        data-lang-en="Original Concept: Shotaro Shimizu">
+                    <p data-lang-jp="デザイン原案：清水翔太郎" data-lang-en="Original Concept: Shotaro Shimizu">
                         デザイン原案：清水翔太郎</p>
                     <p data-lang-jp="PR映像：東京造形大学 メディアデザイン専攻領域3年 樋口涼音"
                         data-lang-en="PR Video: Suzune Higuchi, 3rd-year student, Department of Media Design, Tokyo Zokei University">
@@ -543,8 +554,10 @@
             </div>
         </footer>
     </div>
-    <script src="main.js"></script>
-    <script src="tranlate.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/visual.js"></script>
+    <script src="js/tranlate.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 
 </html>
