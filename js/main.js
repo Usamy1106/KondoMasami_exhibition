@@ -1,28 +1,51 @@
+// --- スプラッシュ画面アニメーション開始（DOMContentLoaded時点） ---
+let isPageLoaded = false;
+let isAnimationDone = false;
 
-// --- スプラッシュ画面アニメーション ---
 document.addEventListener("DOMContentLoaded", () => {
     const spans = document.querySelectorAll("#splash p span");
+
     spans.forEach((span, index) => {
         span.style.animationDelay = `${index * 0.25}s`;
     });
 
+    // アニメーションが終わるまで約時間（例：span数×0.25s + α）
+    const totalAnimationTime = spans.length * 0.25 * 1000 + 500;
+    
     setTimeout(() => {
-        const splash = document.getElementById("splash");
-        splash.style.animation = "fadeOut 1s forwards";
-        setTimeout(() => {
-            splash.style.display = "none";
-        }, 1000);
-    }, 4000);
+        isAnimationDone = true;
+        if (isPageLoaded) {
+            hideSplash(); // 両方完了していたらフェードアウト
+        }
+    }, totalAnimationTime);
 });
-window.addEventListener('load', () => {
+
+// --- ページ完全ロードを待つ ---
+window.addEventListener("load", () => {
+    isPageLoaded = true;
+    if (isAnimationDone) {
+        hideSplash(); // 両方完了していたらフェードアウト
+    }
+});
+
+// --- スプラッシュをフェードアウトして非表示にする処理 ---
+function hideSplash() {
+    const splash = document.getElementById("splash");
+    splash.style.animation = "fadeOut 1s forwards";
+    setTimeout(() => {
+        splash.style.display = "none";
+    }, 1000); // アニメーションと同じ時間
+}
+
+// --- ハッシュ付き遷移（スプラッシュが消えた後にスクロール） ---
+window.addEventListener("load", () => {
     const hash = window.location.hash;
     if (hash) {
         const target = document.querySelector(hash);
         if (target) {
-            // 遅延してからスクロールすることで位置ずれを防ぐ
             setTimeout(() => {
-                target.scrollIntoView({ behavior: 'auto', block: 'start' });
-            }, 100);
+                target.scrollIntoView({ behavior: "auto", block: "start" });
+            }, 1600); // スプラッシュ終了後にスクロール
         }
     }
 });
