@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 #visual img {
     position: fixed;
     z-index: 10;
@@ -25,8 +27,6 @@
 
 #hero-area {
     position: relative;
-    width: 85%;
-    height: 60vh;
     margin: 0 auto;
 }
 
@@ -34,6 +34,9 @@
     position: absolute;
     top: 10vh;
     z-index: 30;
+    width: 85%;
+    left: 50%;
+    translate: -50% 0;
 }
 
 .info {
@@ -72,7 +75,7 @@ section {
     position: absolute;
     width: 8em;
     bottom: 2em;
-    right: 0;
+    right: 4vw;
 }
 
 .heading-profile {
@@ -259,8 +262,16 @@ section {
 }
 
 @media only screen and (max-width: 1366px) {
-    #wrapper {
+
+    #about,
+    #profile,
+    #movie,
+    #access {
         padding: 0 4vw;
+    }
+
+    #about {
+        padding-bottom: 10vh;
     }
 
     .exhibition-group-container {
@@ -405,10 +416,6 @@ section {
         display: block;
         margin: 0 auto;
         /* 背景で画像領域確認 */
-    }
-
-    #wrapper {
-        padding: 0;
     }
 
     section {
