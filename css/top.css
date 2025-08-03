@@ -26,17 +26,15 @@
 }
 
 #hero-area {
-    position: relative;
-    margin: 0 auto;
+    margin-bottom: 10vh;
 }
 
 #hero-area h1 {
-    position: absolute;
-    top: 10vh;
-    z-index: 30;
     width: 85%;
-    left: 50%;
-    translate: -50% 0;
+    margin: 10vh auto 0;
+    text-align: center;
+    position: relative;
+    z-index: 30;
 }
 
 .info {

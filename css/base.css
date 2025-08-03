@@ -297,8 +297,7 @@ footer {
     margin-bottom: 2em;
 }
 
-small {
-    display: block;
+.copyright {
     text-align: center;
 }
 
