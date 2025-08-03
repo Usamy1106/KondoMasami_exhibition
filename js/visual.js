@@ -21,7 +21,6 @@ const wrapperStyle = () => {
         const wrapper_width = viewport_width - visual_width;
         wrapper.style.width = wrapper_width + "px";
         wrapper.style.marginLeft = visual_width + "px";
-        hero_area.style.height = "60vh";
         footer.style.width = wrapper_width + "px";
         footer.style.marginLeft = visual_width + "px";
 
