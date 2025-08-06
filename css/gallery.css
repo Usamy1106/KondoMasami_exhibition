@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+h2 picture img {
+  width: 40vw;
+  height: auto;
+  margin: 5vh auto;
+}
+
+#masonry {
+  position: relative;
+  width: 74%;
+  margin: 0 auto 5vh;
+}
+
+.item {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ccc;
+  border-radius: 6px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* 背景を暗く */
+  justify-content: center;
+  align-items: center;
+}
+
+/* 拡大画像 */
+.modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* 表示時（flexに） */
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.4s ease;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #masonry {
+    position: relative;
+    width: 84%;
+    margin: 0 auto 5vh;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #masonry {
+    position: relative;
+    width: 94%;
+    margin: 0 auto 5vh;
+  }
+}

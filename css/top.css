@@ -35,6 +35,7 @@
     text-align: center;
     position: relative;
     z-index: 30;
+    height: 50vh;
 }
 
 .info {
@@ -64,7 +65,6 @@ section {
     margin: 20vh auto;
 }
 
-
 .about-text {
     transform: rotate(-3deg);
 }
@@ -82,13 +82,19 @@ section {
 }
 
 #profile>div {
-    margin: 5vh -20vw;
+    font-size: var(--font-size-R);
+    margin: 5vh -75vw;
+    padding: 4em 0;
+    background-color: var(--color-black);
 }
 
 .profile-container {
-    padding: 8em 65%;
-    background-color: var(--color-black);
-    transform: rotate(5deg);
+    rotate: 5deg;
+}
+
+.profile-container div {
+    width: 30em;
+    margin: 0 auto;
 }
 
 .profile-container p {
@@ -96,9 +102,12 @@ section {
 }
 
 .exhibition-individual-container {
-    padding: 8em 60%;
-    background-color: var(--color-black);
-    transform: rotate(-6deg);
+    rotate: -6deg;
+}
+
+.exhibition-individual-container div {
+    width: 30em;
+    margin: 0 auto;
 }
 
 .exhibition-individual-container p {
@@ -106,15 +115,15 @@ section {
 }
 
 .exhibition-group-container {
-    padding: 8em 36%;
-    background-color: var(--color-black);
-    transform: rotate(2deg);
+    rotate: 2deg;
 }
 
 .exhibition-group-container>div {
+    width: 32em;
     display: flex;
-    gap: 2em;
-    margin: 2em 0;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 auto;
 }
 
 .year {
@@ -221,6 +230,14 @@ section {
     margin: 1em 0;
 }
 
+#access p:nth-of-type(3) {
+    margin: 1em 0 0;
+}
+
+#access p:nth-of-type(4) {
+    margin: 0 0 1em;
+}
+
 .map-container {
     display: flex;
     gap: 2em;
@@ -259,6 +276,20 @@ section {
     }
 }
 
+.pc-img {
+    display: block;
+}
+
+.tablet-img {
+    display: none;
+    height: 100%;
+}
+
+.sp-img {
+    display: none;
+    height: 100%;
+}
+
 @media only screen and (max-width: 1366px) {
 
     #about,
@@ -276,12 +307,7 @@ section {
         padding: 8em 58%;
     }
 
-    .exhibition-group-container div {
-        flex-direction: column;
-        gap: 0.5em;
-    }
-
-    .exhibition-group-container div p:nth-child(1) {
+    .exhibition-group-container div div p:nth-child(1) {
         white-space: normal;
     }
 
@@ -295,8 +321,41 @@ section {
     }
 }
 
-/* タブレット（1280px） */
-@media only screen and (max-width: 1280px) {
+/* タブレットの横向き（min-width: 600px, max-width: 1024px） + landscape */
+@media screen and (min-width: 600px)and (max-width:1280px) and (orientation: landscape) {
+    .pc-img {
+        display: block;
+    }
+
+    .tablet-img {
+        display: none;
+    }
+
+    .sp-img {
+        display: none;
+    }
+
+    #visual img {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: auto;
+    }
+
+    #hero-area h1 {
+        width: 85%;
+        margin: 30vh auto 0;
+        text-align: center;
+        position: relative;
+        z-index: 30;
+        height: 50vh;
+    }
+}
+
+/* タブレットの縦向き（min-width: 600px, max-width: 1024px） + portrait */
+@media screen and (min-width: 600px) and (orientation: portrait) {
     .pc-img {
         display: none;
     }
@@ -309,10 +368,6 @@ section {
         display: none;
     }
 
-    #hero-area {
-        width: 100%;
-    }
-
     #visual img {
         position: absolute;
         top: 0;
@@ -322,22 +377,33 @@ section {
     }
 
     #hero-area h1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        /* 背景つけて位置を見るため */
+        margin-top: 20px;
     }
 
     #hero-area h1 img {
-        height: 50px;
-        /* 仮に高さ固定 */
-        width: auto;
         display: block;
+        height: 100%;
+        width: auto;
         margin: 0 auto;
-        /* 背景で画像領域確認 */
     }
+
+    #profile>div {
+        font-size: var(--font-size-R);
+        margin: 5vh -50%;
+        background-color: var(--color-black);
+    }
+}
+
+
+
+/* タブレット（1280px） */
+@media only screen and (max-width: 1280px) {
+
+    #hero-area {
+        width: 100%;
+    }
+
+
 
     #wrapper {
         width: 100%;
@@ -363,13 +429,7 @@ section {
 
     }
 
-
-    #profile>div:nth-of-type(2) {
-        margin: 5vh -33vw;
-    }
-
     .exhibition-group-container {
-        padding: 8em 25%;
         transform: rotate(0.6deg);
     }
 }
@@ -399,21 +459,15 @@ section {
     }
 
     #hero-area h1 {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        text-align: center;
-        /* 背景つけて位置を見るため */
+        margin-top: 20px;
     }
 
     #hero-area h1 img {
-        height: 50px;
-        /* 仮に高さ固定 */
-        width: auto;
         display: block;
+        height: 100%;
+        width: auto;
         margin: 0 auto;
-        /* 背景で画像領域確認 */
     }
 
     section {
@@ -432,16 +486,14 @@ section {
         padding-left: 4em;
     }
 
-    #profile>div:nth-of-type(1) {
-        margin: 5vh -55vw;
+    #profile>div {
+        font-size: var(--font-size-R);
+        margin: 5vh -50%;
+        background-color: var(--color-black);
     }
 
     .profile-container {
         transform: rotate(4deg);
-    }
-
-    #profile>div:nth-of-type(2) {
-        margin: 5vh -52vw;
     }
 
     .exhibition-individual-container {
@@ -451,6 +503,11 @@ section {
     .exhibition-group-container {
         padding: 8em 25%;
         transform: rotate(0.6deg);
+    }
+
+    .exhibition-individual-container div {
+        width: 24em;
+        margin: 0 auto;
     }
 
     #access {
