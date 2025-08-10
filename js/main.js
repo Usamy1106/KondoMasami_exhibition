@@ -1,178 +1,120 @@
-// --- スプラッシュ画面制御クラス ---
+// --- 軽量ハイブリッド方式スプラッシュ画面制御クラス ---
 class SplashController {
     constructor() {
         this.isPageLoaded = false;
         this.isAnimationDone = false;
-        this.animationTimer = null;
-        this.hashScrollTimer = null;
+        this.startTime = Date.now();
 
         this.init();
     }
 
     init() {
-        // DOMContentLoaded時の初期化
+        // 最大10秒でタイムアウト（安全装置）
+        setTimeout(() => this.forceHide(), 10000);
+
+        // DOM初期化
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.initSplashAnimation());
+            document.addEventListener('DOMContentLoaded', () => this.initAnimation());
         } else {
-            this.initSplashAnimation();
+            this.initAnimation();
         }
 
-        // ページロード完了時の処理
+        // ページロード監視
         if (document.readyState === 'complete') {
-            this.handlePageLoad();
+            this.isPageLoaded = true;
+            this.checkHide();
         } else {
-            window.addEventListener('load', () => this.handlePageLoad());
+            window.addEventListener('load', () => {
+                this.isPageLoaded = true;
+                this.checkHide();
+                this.handleHash();
+            });
         }
     }
 
-    initSplashAnimation() {
-        const splashElement = document.getElementById('splash');
-        if (!splashElement) {
-            console.warn('Splash element not found');
-            return;
-        }
-
-        const spans = splashElement.querySelectorAll('p span');
-        if (spans.length === 0) {
-            console.warn('Splash span elements not found');
+    initAnimation() {
+        const spans = document.querySelectorAll('#splash p span');
+        if (!spans.length) {
             this.isAnimationDone = true;
-            this.checkAndHideSplash();
+            this.checkHide();
             return;
         }
 
-        // 各spanにアニメーション遅延を設定
-        spans.forEach((span, index) => {
-            span.style.animationDelay = `${index * 0.25}s`;
+        // spanアニメーション遅延設定
+        spans.forEach((span, i) => {
+            span.style.animationDelay = `${i * 0.25}s`;
         });
 
-        // アニメーション完了時間を計算（最後の要素のアニメーション開始時間 + アニメーション持続時間 + バッファ）
-        const lastSpanDelay = (spans.length - 1) * 0.25;
-        const animationDuration = this.getAnimationDuration(spans[0]) || 1; // デフォルト1秒
-        const totalAnimationTime = (lastSpanDelay + animationDuration + 0.5) * 1000;
+        // アニメーション完了タイマー
+        const duration = this.getAnimationDuration(spans[0]) || 1;
+        const totalTime = ((spans.length - 1) * 0.25 + duration + 0.5) * 1000;
 
-        this.animationTimer = setTimeout(() => {
+        setTimeout(() => {
             this.isAnimationDone = true;
-            this.checkAndHideSplash();
-        }, totalAnimationTime);
+            this.checkHide();
+        }, totalTime);
     }
 
     getAnimationDuration(element) {
-        try {
-            const computedStyle = window.getComputedStyle(element);
-            const duration = computedStyle.animationDuration;
-            return parseFloat(duration) || 1;
-        } catch (error) {
-            console.warn('Could not get animation duration:', error);
-            return 1;
-        }
+        const style = getComputedStyle(element);
+        return parseFloat(style.animationDuration) || 1;
     }
 
-    handlePageLoad() {
-        this.isPageLoaded = true;
-        this.checkAndHideSplash();
-        this.handleHashNavigation();
-    }
+    checkHide() {
+        if (!this.isPageLoaded || !this.isAnimationDone) return;
 
-    checkAndHideSplash() {
-        if (this.isPageLoaded && this.isAnimationDone) {
+        const elapsed = Date.now() - this.startTime;
+        const remaining = 3000 - elapsed;
+
+        if (remaining <= 0) {
             this.hideSplash();
+        } else {
+            setTimeout(() => this.hideSplash(), remaining);
         }
     }
 
     hideSplash() {
         const splash = document.getElementById('splash');
-        if (!splash) {
-            console.warn('Splash element not found for hiding');
-            return;
-        }
-
-        // 既に非表示の場合は何もしない
-        if (splash.style.display === 'none') {
-            return;
-        }
+        if (!splash || splash.style.display === 'none') return;
 
         splash.style.animation = 'fadeOut 1s forwards';
-
-        setTimeout(() => {
-            splash.style.display = 'none';
-            // クリーンアップ
-            this.cleanup();
-        }, 1000);
+        setTimeout(() => splash.style.display = 'none', 1000);
     }
 
-    handleHashNavigation() {
-        const hash = window.location.hash;
+    handleHash() {
+        const hash = location.hash;
         if (!hash) return;
 
         const target = document.querySelector(hash);
-        if (!target) {
-            console.warn(`Hash target not found: ${hash}`);
-            return;
-        }
-
-        // スプラッシュ終了後にスクロール（フェードアウト時間 + バッファを考慮）
-        this.hashScrollTimer = setTimeout(() => {
-            try {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            } catch (error) {
-                console.warn('Scroll to hash failed:', error);
-                // フォールバック
-                target.scrollIntoView();
-            }
-        }, 1600);
-    }
-
-    cleanup() {
-        // タイマーのクリーンアップ
-        if (this.animationTimer) {
-            clearTimeout(this.animationTimer);
-            this.animationTimer = null;
-        }
-
-        if (this.hashScrollTimer) {
-            clearTimeout(this.hashScrollTimer);
-            this.hashScrollTimer = null;
+        if (target) {
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 1600);
         }
     }
 
-    // 手動でスプラッシュを非表示にするメソッド（デバッグ用）
     forceHide() {
-        this.isPageLoaded = true;
-        this.isAnimationDone = true;
-        this.hideSplash();
+        const splash = document.getElementById('splash');
+        if (splash && splash.style.display !== 'none') {
+            splash.style.animation = 'fadeOut 1s forwards';
+            setTimeout(() => splash.style.display = 'none', 1000);
+        }
     }
 }
 
 // --- 初期化 ---
-let splashController;
-
-// DOMが準備でき次第、またはすでに準備済みの場合に初期化
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        splashController = new SplashController();
-    });
+    document.addEventListener('DOMContentLoaded', () => new SplashController());
 } else {
-    splashController = new SplashController();
+    new SplashController();
 }
 
-// エラーハンドリング：予期しないエラーでスプラッシュが残らないように
-window.addEventListener('error', (event) => {
-    console.error('Unexpected error occurred:', event.error);
-    if (splashController) {
-        setTimeout(() => {
-            splashController.forceHide();
-        }, 3000); // 3秒後に強制非表示
-    }
-});
-
-// ページ離脱時のクリーンアップ
-window.addEventListener('beforeunload', () => {
-    if (splashController) {
-        splashController.cleanup();
-    }
+// エラー時強制非表示
+window.addEventListener('error', () => {
+    setTimeout(() => {
+        const splash = document.getElementById('splash');
+        if (splash) splash.style.display = 'none';
+    }, 3000);
 });
 
 // --- ハンバーガーメニュー ---

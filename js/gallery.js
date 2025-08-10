@@ -2,8 +2,19 @@ function layoutMasonry() {
   const container = document.getElementById('masonry');
   const items = container.getElementsByClassName('item');
 
-  const isMobile = window.innerWidth <= 768;
-  const columns = isMobile ? 3 : 4;
+  let columns;
+
+  if (window.innerWidth <= 768) {
+    // スマホ
+    columns = 2;
+  } else if (window.innerWidth <= 1280) {
+    // タブレット
+    columns = 3;
+  } else {
+    // PC
+    columns = 4;
+  }
+
 
   const containerWidth = container.clientWidth;
   const gap = 32; // item間の余白(px)

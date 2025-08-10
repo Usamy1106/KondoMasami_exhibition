@@ -69,21 +69,6 @@ const wrapperStyle = () => {
     }
 };
 
-// スライドショー機能
-const slides = document.querySelectorAll('#visual .slide');
-let currentSlide = 0;
-const interval = 30000; // 30秒
-
-function showNextSlide() {
-    if (slides.length > 0) {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-}
-
-setInterval(showNextSlide, interval);
-
 // イベントリスナー
 function handleResize() {
     // リサイズ時は少し遅延を入れる（向き変更対応）
