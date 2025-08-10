@@ -17,6 +17,7 @@
 
 .slide {
     opacity: 0;
+    -webkit-transition: opacity 1s ease;
     transition: opacity 1s ease;
 }
 
@@ -66,7 +67,7 @@ section {
 }
 
 .about-text {
-    transform: rotate(-3deg);
+    rotate: -3deg;
 }
 
 .about-name {
@@ -136,7 +137,7 @@ section {
 
 .heading-gallery {
     width: fit-content;
-    margin: 0 auto 2em;
+    margin: 0 auto 0.5em;
 }
 
 .gallery-wrap {
@@ -193,8 +194,9 @@ section {
     padding: 0.5em 4em;
     width: fit-content;
     margin: 0 auto 5vh;
-    border: 2px solid var(--color-black);
+    border: 1.8px solid var(--color-black);
     border-radius: 0.1em;
+    -webkit-transition: all .4s;
     transition: all .4s
 }
 
@@ -430,7 +432,7 @@ section {
     }
 
     .exhibition-group-container {
-        transform: rotate(0.6deg);
+        rotate: 0.6deg;
     }
 }
 
@@ -493,16 +495,16 @@ section {
     }
 
     .profile-container {
-        transform: rotate(4deg);
+        rotate: 4deg;
     }
 
     .exhibition-individual-container {
-        transform: rotate(-3deg);
+        rotate: -3deg;
     }
 
     .exhibition-group-container {
         padding: 8em 25%;
-        transform: rotate(0.6deg);
+        rotate: 0.6deg;
     }
 
     .exhibition-individual-container div {

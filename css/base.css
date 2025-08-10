@@ -28,7 +28,7 @@ picture {
     --font-size-XL: clamp(2rem, calc(3rem + 0.625vw), 9rem);
     --font-size-L: clamp(2.8rem, calc(1.4rem + 0.625vw), 5.4rem);
     --font-size-R: clamp(1.2rem, calc(0.65rem + 0.625vw), 1.8rem);
-    --font-size-S: clamp(0.7rem, calc(0.48rem + 0.5vw), 1rem);
+    --font-size-S: clamp(0.8rem, calc(0.48rem + 0.5vw), 1.2rem);
     --header-size-vertical: clamp(20px, calc(12px + 2.5vw), 46px);
     --header-size--horizontal: clamp(32px, calc(20px + 5vw), 58px);
     --color-black: #0E0000;
@@ -37,9 +37,12 @@ picture {
     --font-hiragino: "hiragino-kaku-gothic-pron", sans-serif;
 }
 
+h2 {
+    font-size: var(--font-size-XL);
+    margin-bottom: 0.5em;
+}
 
 h2 picture img {
-    font-size: var(--font-size-XL);
     height: 1.6em;
     width: auto;
 }
@@ -104,6 +107,7 @@ a {
 #splash p span {
     opacity: 0;
     visibility: hidden;
+    font-weight: 600;
     font-size: var(--font-size-L);
     animation: splash 0.25s ease forwards;
 }
@@ -133,6 +137,7 @@ a {
     width: 100%;
     height: 100vh;
     opacity: 0;
+    -webkit-transition: all .6s;
     transition: all .6s;
 }
 
@@ -179,15 +184,13 @@ a {
     font-size: var(--font-size-L);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 400;
+    font-weight: 600;
+    -webkit-transition: all .4s;
     transition: all .4s
 }
 
 #g-nav li a:hover,
 #g-nav li a:active {
-    color: var(--color-white);
-    -webkit-text-stroke: 0.08em var(--color-black);
-    text-stroke: 0.001em var(--color-black);
     transform: scale(110%);
 }
 
@@ -201,6 +204,7 @@ a {
     cursor: pointer;
     width: var(--header-size--horizontal);
     height: var(--header-size-vertical);
+    -webkit-transition: all .4s;
     transition: all .4s
 }
 
@@ -211,6 +215,7 @@ a {
 /*×に変化*/
 .g-nav-openbtn span {
     display: inline-block;
+    -webkit-transition: all .4s;
     transition: all .4s;
     position: absolute;
     filter: drop-shadow(0 0 2px var(--color-yellow));
@@ -302,6 +307,15 @@ footer {
     margin-bottom: 2em;
 }
 
+.footer-info p {
+    font-size: var(--font-size-S);
+    margin-bottom: 0.6em;
+}
+
+.footer-info__university {
+    margin-bottom: 2.4em;
+}
+
 .copyright {
     margin-top: 4em;
     text-align: center;
@@ -329,6 +343,13 @@ footer {
 
 .br {
     margin-bottom: 1em;
+    white-space: nowrap;
+}
+
+.photographer {
+    text-align: center;
+    margin-bottom: 2.6em;
+    letter-spacing: .8em;
 }
 
 @media only screen and (max-width: 1366px) {
@@ -389,11 +410,6 @@ footer {
     .footer-logo {
         width: 100%;
         margin-bottom: 4em;
-    }
-
-    .sns-icon-container {
-        width: 16em;
-        max-width: 160px;
     }
 
     .sns-icon-container a img {
